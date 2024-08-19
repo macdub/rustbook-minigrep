@@ -4,6 +4,11 @@ use std::{
 };
 use minigrep::Config;
 
+/*
+when running with Cargo
+$ cargo run -- frog poem.txt
+need the '--' to pass the remaining as parameters to our binary
+*/
 fn main() {
     // env::args() panics with invalid unicode characters
     let args: Vec<String> = env::args().collect();
