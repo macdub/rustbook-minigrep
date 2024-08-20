@@ -16,7 +16,7 @@ fn main() {
     let cfg = Config::build(&args)
         // vertical pipes is a closure |err|
         .unwrap_or_else(|err| {
-            println!("Problem parsing arguments: {err}");
+            eprintln!("Problem parsing arguments: {err}"); // easy enough to send to stderr
             process::exit(1)
         });
 
@@ -25,7 +25,7 @@ fn main() {
 
     // check for errors on run
     if let Err(e) = minigrep::run(cfg) {
-        println!("Application error: {e}");
+        eprintln!("Application error: {e}");
         process::exit(1)
     }
 }
