@@ -88,6 +88,7 @@ pub fn search_case_insensitive<'a>(query: &str, contents: &'a str,) -> Vec<&'a s
 }
 
 // the original search is case-sensitive so let's just use that
+// should really just deprecate the other and move the logic here
 pub fn search_case_sensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     search(query, contents)
 }
